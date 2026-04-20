@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — My Overtime A to Z</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #08050f;
+    --card: rgba(255,255,255,0.04);
+    --border: rgba(139,92,246,0.2);
+    --accent: #7c3aed;
+    --accent2: #a78bfa;
+    --accent3: #c4b5fd;
+    --text: #e9d5ff;
+    --sub: rgba(196,181,253,0.6);
+    --glow: rgba(124,58,237,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── Background mesh ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 10%, rgba(124,58,237,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(67,56,202,0.14) 0%, transparent 55%),
+      radial-gradient(ellipse 40% 60% at 60% 30%, rgba(196,181,253,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── Floating orbs ── */
+  .orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    animation: drift 12s ease-in-out infinite alternate;
+  }
+  .orb1 { width: 400px; height: 400px; background: rgba(124,58,237,0.12); top: -100px; left: -100px; animation-delay: 0s; }
+  .orb2 { width: 300px; height: 300px; background: rgba(67,56,202,0.1); bottom: 100px; right: -50px; animation-delay: -4s; }
+  .orb3 { width: 200px; height: 200px; background: rgba(196,181,253,0.07); top: 50%; left: 60%; animation-delay: -8s; }
+
+  @keyframes drift {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(30px, 40px) scale(1.08); }
+  }
+
+  /* ── Wrapper ── */
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── Header ── */
+  header {
+    padding: 60px 0 50px;
+    text-align: center;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(124,58,237,0.15);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    padding: 8px 20px;
+    margin-bottom: 28px;
+    backdrop-filter: blur(10px);
+  }
+
+  .app-badge span {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent2);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #fff 0%, var(--accent3) 50%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+
+  .header-sub {
+    font-size: 16px;
+    color: var(--sub);
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto 24px;
+  }
+
+  .date-chip {
+    display: inline-block;
+    background: rgba(124,58,237,0.12);
+    border: 1px solid rgba(124,58,237,0.3);
+    border-radius: 8px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: var(--accent3);
+    font-weight: 500;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 8px 0 48px;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(12px);
+    animation: fadeUp 0.7s ease 0.3s both;
+  }
+
+  .toc-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent2);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+
+  .toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 6px;
+  }
+
+  .toc-list a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--sub);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 7px;
+    transition: all 0.2s;
+  }
+
+  .toc-list a::before {
+    content: '→';
+    color: var(--accent);
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+
+  .toc-list a:hover {
+    color: var(--accent3);
+    background: rgba(124,58,237,0.1);
+  }
+
+  .toc-list a:hover::before { transform: translateX(3px); }
+
+  /* ── Sections ── */
+  section {
+    margin-bottom: 36px;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  section:nth-child(1) { animation-delay: 0.1s; }
+  section:nth-child(2) { animation-delay: 0.15s; }
+  section:nth-child(3) { animation-delay: 0.2s; }
+  section:nth-child(4) { animation-delay: 0.25s; }
+  section:nth-child(5) { animation-delay: 0.3s; }
+  section:nth-child(6) { animation-delay: 0.35s; }
+  section:nth-child(7) { animation-delay: 0.4s; }
+
+  .section-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .section-card:hover {
+    border-color: rgba(139,92,246,0.4);
+    box-shadow: 0 0 30px rgba(124,58,237,0.08);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .section-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: rgba(124,58,237,0.2);
+    border: 1px solid rgba(139,92,246,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  p {
+    color: rgba(196,181,253,0.75);
+    font-size: 15px;
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* ── Highlight box ── */
+  .highlight {
+    background: rgba(124,58,237,0.12);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+
+  .highlight p {
+    color: var(--accent3);
+    font-weight: 500;
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* ── Info list ── */
+  .info-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .info-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: rgba(196,181,253,0.75);
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .info-list li::before {
+    content: '◆';
+    color: var(--accent);
+    font-size: 8px;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  /* ── Tag pills ── */
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .tag {
+    background: rgba(124,58,237,0.15);
+    border: 1px solid rgba(139,92,246,0.3);
+    border-radius: 99px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: var(--accent3);
+    font-weight: 500;
+  }
+
+  .tag.green {
+    background: rgba(22,163,74,0.12);
+    border-color: rgba(34,197,94,0.3);
+    color: #86efac;
+  }
+
+  .tag.red {
+    background: rgba(220,38,38,0.12);
+    border-color: rgba(239,68,68,0.3);
+    color: #fca5a5;
+  }
+
+  /* ── Contact card ── */
+  .contact-card {
+    background: linear-gradient(135deg, rgba(124,58,237,0.18), rgba(67,56,202,0.12));
+    border: 1px solid rgba(139,92,246,0.4);
+    border-radius: 16px;
+    padding: 28px 32px;
+    text-align: center;
+    animation: fadeUp 0.6s ease 0.5s both;
+  }
+
+  .contact-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(124,58,237,0.2);
+    border: 1px solid rgba(139,92,246,0.4);
+    border-radius: 10px;
+    padding: 10px 18px;
+    color: var(--accent3);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    background: rgba(124,58,237,0.35);
+    border-color: var(--accent2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124,58,237,0.2);
+  }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
+    margin-top: 48px;
+    animation: fadeUp 0.6s ease 0.6s both;
+  }
+
+  .footer-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff, var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+
+  footer p {
+    font-size: 13px;
+    color: rgba(139,92,246,0.4);
+    margin-bottom: 4px;
+  }
+
+  /* ── Bengali toggle ── */
+  .lang-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    z-index: 100;
+    background: rgba(124,58,237,0.2);
+    border: 1px solid rgba(139,92,246,0.4);
+    border-radius: 10px;
+    padding: 8px 16px;
+    color: var(--accent3);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    backdrop-filter: blur(12px);
+    transition: all 0.2s;
+  }
+
+  .lang-toggle:hover {
+    background: rgba(124,58,237,0.35);
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .wrapper { padding: 0 16px 60px; }
+    .section-card { padding: 20px 18px; }
+    .toc { padding: 18px 16px; }
+    .toc-list { grid-template-columns: 1fr; }
+    .contact-card { padding: 20px 16px; }
+    header { padding: 44px 0 36px; }
+  }
+
+  /* ── Bengali content ── */
+  .bn { display: none; }
+  body.bn-mode .en { display: none; }
+  body.bn-mode .bn { display: block; }
+  body.bn-mode .bn-inline { display: inline; }
+  body.bn-mode .en-inline { display: none; }
+  .bn-inline { display: none; }
+</style>
+</head>
+<body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<button class="lang-toggle" onclick="toggleLang()" id="langBtn">বাংলা</button>
+
+<div class="wrapper">
+
+  <!-- Header -->
+  <header>
+    <div class="app-badge">
+      <div class="badge-dot"></div>
+      <span>My Overtime A to Z</span>
+    </div>
+    <h1>Privacy Policy</h1>
+    <p class="header-sub en">We believe in transparency. Here's exactly how your data is handled.</p>
+    <p class="header-sub bn" style="display:none">আমরা স্বচ্ছতায় বিশ্বাসী। আপনার ডেটা কীভাবে পরিচালিত হয় তা এখানে দেওয়া হলো।</p>
+    <span class="date-chip">Effective Date: April 20, 2026</span>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-collected">Data Collected</a></li>
+      <li><a href="#data-storage">Data Storage</a></li>
+      <li><a href="#third-party">Third-Party Services</a></li>
+      <li><a href="#ads">Advertising</a></li>
+      <li><a href="#permissions">Permissions</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Policy Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- 1. Overview -->
+  <section id="overview">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🔍</div>
+        <h2 class="en">1. Overview</h2>
+        <h2 class="bn" style="display:none">১. সংক্ষিপ্ত বিবরণ</h2>
+      </div>
+      <p class="en">
+        <strong style="color:#e9d5ff">My Overtime A to Z</strong> ("the App") is a salary, overtime, and night-bill calculator designed for workers and managers. This Privacy Policy explains what information we collect, how it is used, and your rights regarding that information.
+      </p>
+      <p class="bn" style="display:none">
+        <strong style="color:#e9d5ff">My Overtime A to Z</strong> ("অ্যাপ") একটি বেতন, ওভারটাইম এবং নাইট বিল ক্যালকুলেটর যা কর্মী ও ম্যানেজারদের জন্য তৈরি। এই প্রাইভেসি পলিসিতে আমরা কী তথ্য সংগ্রহ করি, কীভাবে ব্যবহার করি এবং সে বিষয়ে আপনার অধিকার ব্যাখ্যা করা হয়েছে।
+      </p>
+      <div class="highlight">
+        <p class="en">✦ Your personal salary data never leaves your device. It is stored locally only.</p>
+        <p class="bn" style="display:none">✦ আপনার ব্যক্তিগত বেতন ডেটা কখনো আপনার ডিভাইস ছেড়ে যায় না। এটি শুধুমাত্র স্থানীয়ভাবে সংরক্ষিত হয়।</p>
+      </div>
+      <p class="en">
+        By installing and using the App, you agree to the practices described in this policy. If you do not agree, please uninstall the App.
+      </p>
+      <p class="bn" style="display:none">
+        অ্যাপ ইনস্টল ও ব্যবহার করার মাধ্যমে আপনি এই পলিসিতে বর্ণিত পদ্ধতিতে সম্মতি দিচ্ছেন। যদি সম্মত না হন, অনুগ্রহ করে অ্যাপটি আনইনস্টল করুন।
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Data Collected -->
+  <section id="data-collected">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">📋</div>
+        <h2 class="en">2. What Data We Collect</h2>
+        <h2 class="bn" style="display:none">২. আমরা কী তথ্য সংগ্রহ করি</h2>
+      </div>
+
+      <p class="en"><strong style="color:#e9d5ff">Data you provide (stored locally on your device):</strong></p>
+      <p class="bn" style="display:none"><strong style="color:#e9d5ff">আপনার প্রদত্ত তথ্য (আপনার ডিভাইসে স্থানীয়ভাবে সংরক্ষিত):</strong></p>
+
+      <ul class="info-list">
+        <li class="en">Worker names and designations</li>
+        <li class="bn" style="display:none">কর্মীর নাম ও পদবি</li>
+        <li class="en">Salary figures (basic, gross)</li>
+        <li class="bn" style="display:none">বেতনের পরিমাণ (বেসিক, গ্রস)</li>
+        <li class="en">Overtime hours and dates</li>
+        <li class="bn" style="display:none">ওভারটাইম ঘন্টা ও তারিখ</li>
+        <li class="en">Night bill entries and absent dates</li>
+        <li class="bn" style="display:none">নাইট বিল এন্ট্রি ও অনুপস্থিত তারিখ</li>
+        <li class="en">Worker profile photos (optional)</li>
+        <li class="bn" style="display:none">কর্মীর প্রোফাইল ছবি (ঐচ্ছিক)</li>
+        <li class="en">Attendance bonus settings</li>
+        <li class="bn" style="display:none">হাজিরা বোনাস সেটিংস</li>
+      </ul>
+
+      <div class="tag-row" style="margin-top:18px;">
+        <span class="tag green">✓ Stored locally only</span>
+        <span class="tag green">✓ Never uploaded to servers</span>
+        <span class="tag green">✓ No account required</span>
+        <span class="tag red">✗ Not shared with third parties</span>
+      </div>
+
+      <p class="en" style="margin-top:18px;">
+        <strong style="color:#e9d5ff">Data collected automatically:</strong> The App uses Google AdMob for advertising. AdMob may collect device identifiers, IP address, and usage statistics as described in Google's Privacy Policy. We do not have direct access to this data.
+      </p>
+      <p class="bn" style="display:none;margin-top:18px;">
+        <strong style="color:#e9d5ff">স্বয়ংক্রিয়ভাবে সংগৃহীত তথ্য:</strong> অ্যাপটি বিজ্ঞাপনের জন্য Google AdMob ব্যবহার করে। AdMob ডিভাইস আইডেন্টিফায়ার, আইপি ঠিকানা এবং ব্যবহারের পরিসংখ্যান সংগ্রহ করতে পারে যেমনটি Google-এর প্রাইভেসি পলিসিতে বর্ণিত আছে। আমাদের এই ডেটায় সরাসরি অ্যাক্সেস নেই।
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. Data Storage -->
+  <section id="data-storage">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">💾</div>
+        <h2 class="en">3. How Data Is Stored</h2>
+        <h2 class="bn" style="display:none">৩. তথ্য কীভাবে সংরক্ষিত হয়</h2>
+      </div>
+      <p class="en">
+        All user-entered data (workers, records, salary calculations) is stored exclusively on your device using:
+      </p>
+      <p class="bn" style="display:none">
+        সমস্ত ব্যবহারকারী-প্রদত্ত তথ্য (কর্মী, রেকর্ড, বেতন হিসাব) শুধুমাত্র আপনার ডিভাইসে সংরক্ষিত হয়:
+      </p>
+      <ul class="info-list">
+        <li class="en"><strong style="color:#c4b5fd">AsyncStorage</strong> — React Native's local key-value store</li>
+        <li class="bn" style="display:none"><strong style="color:#c4b5fd">AsyncStorage</strong> — React Native-এর লোকাল কি-ভ্যালু স্টোর</li>
+        <li class="en"><strong style="color:#c4b5fd">FileSystem (JSON file)</strong> — A backup file stored in the app's document directory</li>
+        <li class="bn" style="display:none"><strong style="color:#c4b5fd">FileSystem (JSON ফাইল)</strong> — অ্যাপের ডকুমেন্ট ডিরেক্টরিতে একটি ব্যাকআপ ফাইল</li>
+      </ul>
+      <div class="highlight">
+        <p class="en">✦ Data is deleted permanently when you uninstall the App or use the in-app "Clear All" function.</p>
+        <p class="bn" style="display:none">✦ অ্যাপ আনইনস্টল করলে বা ইন-অ্যাপ "সব মুছুন" ফাংশন ব্যবহার করলে ডেটা স্থায়ীভাবে মুছে যায়।</p>
+      </div>
+      <p class="en">
+        We do not operate any servers, databases, or cloud storage that holds your data. There is no user authentication or account system.
+      </p>
+      <p class="bn" style="display:none">
+        আমরা কোনো সার্ভার, ডেটাবেস বা ক্লাউড স্টোরেজ পরিচালনা করি না যেখানে আপনার ডেটা রাখা হয়। কোনো ব্যবহারকারী প্রমাণীকরণ বা অ্যাকাউন্ট সিস্টেম নেই।
+      </p>
+    </div>
+  </section>
+
+  <!-- 4. Third Party -->
+  <section id="third-party">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🔗</div>
+        <h2 class="en">4. Third-Party Services</h2>
+        <h2 class="bn" style="display:none">৪. তৃতীয় পক্ষের সেবা</h2>
+      </div>
+      <p class="en">The App integrates the following third-party services:</p>
+      <p class="bn" style="display:none">অ্যাপটি নিম্নলিখিত তৃতীয় পক্ষের সেবা ব্যবহার করে:</p>
+
+      <div style="margin-top:16px; display:flex; flex-direction:column; gap:12px;">
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(139,92,246,0.2); border-radius:12px; padding:16px 18px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+            <span style="font-size:20px;">🟦</span>
+            <strong style="color:#e9d5ff; font-family:'Syne',sans-serif;">Google AdMob</strong>
+          </div>
+          <p class="en" style="margin:0; font-size:14px;">Provides banner, rewarded, and interstitial advertisements. May collect device info, advertising ID, and interaction data. <a href="https://policies.google.com/privacy" target="_blank" style="color:#a78bfa;">Google Privacy Policy →</a></p>
+          <p class="bn" style="display:none; margin:0; font-size:14px;">ব্যানার, রিওয়ার্ডেড এবং ইন্টারস্টিশিয়াল বিজ্ঞাপন প্রদান করে। ডিভাইস তথ্য, বিজ্ঞাপন আইডি এবং ইন্টারঅ্যাকশন ডেটা সংগ্রহ করতে পারে। <a href="https://policies.google.com/privacy" target="_blank" style="color:#a78bfa;">Google প্রাইভেসি পলিসি →</a></p>
+        </div>
+
+        <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(139,92,246,0.2); border-radius:12px; padding:16px 18px;">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+            <span style="font-size:20px;">📦</span>
+            <strong style="color:#e9d5ff; font-family:'Syne',sans-serif;">Expo (React Native)</strong>
+          </div>
+          <p class="en" style="margin:0; font-size:14px;">The app is built with Expo. Expo may collect minimal crash/diagnostic data to improve their SDK. <a href="https://expo.dev/privacy" target="_blank" style="color:#a78bfa;">Expo Privacy Policy →</a></p>
+          <p class="bn" style="display:none; margin:0; font-size:14px;">অ্যাপটি Expo দিয়ে তৈরি। Expo তাদের SDK উন্নত করতে ন্যূনতম ক্র্যাশ/ডায়াগনস্টিক ডেটা সংগ্রহ করতে পারে। <a href="https://expo.dev/privacy" target="_blank" style="color:#a78bfa;">Expo প্রাইভেসি পলিসি →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Ads -->
+  <section id="ads">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">📢</div>
+        <h2 class="en">5. Advertising</h2>
+        <h2 class="bn" style="display:none">৫. বিজ্ঞাপন</h2>
+      </div>
+      <p class="en">
+        The App displays advertisements provided by Google AdMob to support free access. Ads shown include:
+      </p>
+      <p class="bn" style="display:none">
+        বিনামূল্যে অ্যাক্সেস সমর্থন করতে অ্যাপটি Google AdMob-এর বিজ্ঞাপন প্রদর্শন করে। দেখানো বিজ্ঞাপনের ধরন:
+      </p>
+      <ul class="info-list">
+        <li class="en">Banner ads (displayed in the footer of each tab)</li>
+        <li class="bn" style="display:none">ব্যানার বিজ্ঞাপন (প্রতিটি ট্যাবের ফুটারে)</li>
+        <li class="en">Rewarded ads (shown before viewing detailed report records)</li>
+        <li class="bn" style="display:none">রিওয়ার্ডেড বিজ্ঞাপন (বিস্তারিত রিপোর্ট দেখার আগে)</li>
+        <li class="en">Rewarded interstitial ads (shown occasionally during tab switches)</li>
+        <li class="bn" style="display:none">রিওয়ার্ডেড ইন্টারস্টিশিয়াল বিজ্ঞাপন (ট্যাব পরিবর্তনের সময় মাঝে মাঝে)</li>
+      </ul>
+      <p class="en" style="margin-top:14px;">
+        AdMob may use non-personalized ads based on your request. We do not use your salary data for ad targeting. Ad personalization is controlled by Google's settings.
+      </p>
+      <p class="bn" style="display:none; margin-top:14px;">
+        AdMob আপনার অনুরোধ অনুযায়ী নন-পার্সোনালাইজড বিজ্ঞাপন ব্যবহার করতে পারে। আমরা বিজ্ঞাপন টার্গেটিংয়ের জন্য আপনার বেতনের ডেটা ব্যবহার করি না।
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. Permissions -->
+  <section id="permissions">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🔒</div>
+        <h2 class="en">6. App Permissions</h2>
+        <h2 class="bn" style="display:none">৬. অ্যাপ পারমিশন</h2>
+      </div>
+      <p class="en">The App may request the following Android permissions:</p>
+      <p class="bn" style="display:none">অ্যাপটি নিম্নলিখিত Android পারমিশন চাইতে পারে:</p>
+
+      <div style="margin-top:14px; display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; gap:12px; align-items:flex-start; background:rgba(255,255,255,0.03); border-radius:10px; padding:12px 14px;">
+          <span style="font-size:18px; flex-shrink:0;">📷</span>
+          <div>
+            <strong style="color:#c4b5fd; font-size:14px;" class="en">Camera / Photo Library</strong>
+            <strong style="color:#c4b5fd; font-size:14px;" class="bn" style="display:none">ক্যামেরা / ফটো লাইব্রেরি</strong>
+            <p style="margin:4px 0 0; font-size:13px;" class="en">Optional. Used only if you choose to add a worker profile photo. Photos are stored locally on device only.</p>
+            <p style="margin:4px 0 0; font-size:13px;" class="bn" style="display:none">ঐচ্ছিক। শুধুমাত্র কর্মীর প্রোফাইল ছবি যোগ করতে চাইলে ব্যবহৃত হয়। ছবি শুধুমাত্র ডিভাইসে সংরক্ষিত।</p>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; align-items:flex-start; background:rgba(255,255,255,0.03); border-radius:10px; padding:12px 14px;">
+          <span style="font-size:18px; flex-shrink:0;">🌐</span>
+          <div>
+            <strong style="color:#c4b5fd; font-size:14px;" class="en">Internet Access</strong>
+            <strong style="color:#c4b5fd; font-size:14px;" class="bn" style="display:none">ইন্টারনেট অ্যাক্সেস</strong>
+            <p style="margin:4px 0 0; font-size:13px;" class="en">Required for loading advertisements via AdMob.</p>
+            <p style="margin:4px 0 0; font-size:13px;" class="bn" style="display:none">AdMob-এর মাধ্যমে বিজ্ঞাপন লোড করতে প্রয়োজন।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Children -->
+  <section id="children">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">👶</div>
+        <h2 class="en">7. Children's Privacy</h2>
+        <h2 class="bn" style="display:none">৭. শিশুদের গোপনীয়তা</h2>
+      </div>
+      <p class="en">
+        This App is intended for use by adults (18+) in professional or personal financial management contexts. We do not knowingly collect any personal information from children under the age of 13.
+      </p>
+      <p class="bn" style="display:none">
+        এই অ্যাপটি পেশাদার বা ব্যক্তিগত আর্থিক ব্যবস্থাপনার প্রেক্ষাপটে প্রাপ্তবয়স্কদের (১৮+) ব্যবহারের জন্য তৈরি। আমরা জেনেশুনে ১৩ বছরের কম বয়সী শিশুদের কাছ থেকে কোনো ব্যক্তিগত তথ্য সংগ্রহ করি না।
+      </p>
+      <div class="highlight">
+        <p class="en">If you believe a child has provided personal data through this App, please contact us immediately at the address below.</p>
+        <p class="bn" style="display:none">আপনি যদি মনে করেন কোনো শিশু এই অ্যাপের মাধ্যমে ব্যক্তিগত তথ্য প্রদান করেছে, অনুগ্রহ করে নিচের ঠিকানায় অবিলম্বে আমাদের সাথে যোগাযোগ করুন।</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Changes -->
+  <section id="changes">
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">📝</div>
+        <h2 class="en">8. Changes to This Policy</h2>
+        <h2 class="bn" style="display:none">৮. এই পলিসির পরিবর্তন</h2>
+      </div>
+      <p class="en">
+        We may update this Privacy Policy from time to time. Changes will be reflected on this page with an updated effective date. Continued use of the App after changes constitutes acceptance of the new policy.
+      </p>
+      <p class="bn" style="display:none">
+        আমরা সময়ে সময়ে এই প্রাইভেসি পলিসি আপডেট করতে পারি। পরিবর্তনগুলি আপডেট করা কার্যকর তারিখ সহ এই পৃষ্ঠায় প্রতিফলিত হবে। পরিবর্তনের পরে অ্যাপ ব্যবহার অব্যাহত রাখা মানে নতুন পলিসি গ্রহণ করা।
+      </p>
+      <p class="en">
+        We recommend checking this page periodically for any updates. The current version will always be available at the URL where you found it.
+      </p>
+      <p class="bn" style="display:none">
+        আমরা যেকোনো আপডেটের জন্য সময়ে সময়ে এই পৃষ্ঠাটি পরীক্ষা করার সুপারিশ করি।
+      </p>
+    </div>
+  </section>
+
+  <!-- 9. Contact -->
+  <section id="contact">
+    <div class="contact-card">
+      <div class="section-icon" style="margin: 0 auto 16px; width:52px; height:52px; font-size:22px;">📬</div>
+      <h2 class="en">Contact Us</h2>
+      <h2 class="bn" style="display:none">যোগাযোগ করুন</h2>
+      <p class="en" style="margin-top:10px; color:rgba(196,181,253,0.65); font-size:15px;">
+        For any privacy-related questions or requests, reach us through:
+      </p>
+      <p class="bn" style="display:none; margin-top:10px; color:rgba(196,181,253,0.65); font-size:15px;">
+        যেকোনো প্রাইভেসি-সম্পর্কিত প্রশ্ন বা অনুরোধের জন্য আমাদের সাথে যোগাযোগ করুন:
+      </p>
+      <div class="contact-links">
+        <a href="mailto:rsa.akash@yahoo.com" class="contact-link">
+          📧 rsa.akash@yahoo.com
+        </a>
+        <a href="https://wa.me/8801321109619" target="_blank" class="contact-link">
+          💬 WhatsApp
+        </a>
+        <a href="https://rsscmd.github.io/p/" target="_blank" class="contact-link">
+          🌐 Website
+        </a>
+        <a href="https://www.reddit.com/user/rs_akash" target="_blank" class="contact-link">
+          🟠 Reddit
+        </a>
+      </div>
+      <p style="margin-top:20px; font-size:13px; color:rgba(139,92,246,0.5);" class="en">
+        Developer: RS AKASH · App ID: com.aakash.myovertime
+      </p>
+      <p style="margin-top:20px; font-size:13px; color:rgba(139,92,246,0.5); display:none;" class="bn">
+        ডেভেলপার: RS AKASH · অ্যাপ আইডি: com.aakash.myovertime
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">My Overtime A to Z</div>
+    <p>© 2026 RS AKASH. All rights reserved.</p>
+    <p style="margin-top:6px; font-size:12px; color:rgba(139,92,246,0.3);">
+      This privacy policy was last updated on April 20, 2026.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  let isBn = false;
+  function toggleLang() {
+    isBn = !isBn;
+    const btn = document.getElementById('langBtn');
+    if (isBn) {
+      document.querySelectorAll('.en').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.bn').forEach(el => el.style.display = 'block');
+      btn.textContent = 'English';
+    } else {
+      document.querySelectorAll('.en').forEach(el => el.style.display = 'block');
+      document.querySelectorAll('.bn').forEach(el => el.style.display = 'none');
+      btn.textContent = 'বাংলা';
+    }
+  }
+
+  // Scroll animation for sections
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section').forEach(section => {
+    section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(section);
+  });
+</script>
+</body>
+</html>
